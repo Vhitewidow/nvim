@@ -7,4 +7,10 @@ return require('packer').startup(function(use)
 
     -- color scheme
     use 'Mofiqul/vscode.nvim'
+
+    -- Telescope
+    use {
+	    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+	    requires = { {'nvim-lua/plenary.nvim'} }
+    }
 end)
