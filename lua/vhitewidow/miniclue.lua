@@ -47,4 +47,11 @@ miniclue.setup({
       { mode = 'n', keys = '<leader>fh', desc = 'Telescope: help tags'},
       { mode = 'n', keys = '<leader>fg', desc = 'Telescope: live grep'},
     },
+
+    window = {
+        delay = 0,
+        config = {
+            width = 'auto',
+        }
+    },
   })
