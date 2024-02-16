@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["mini.clue"] = {
+    loaded = true,
+    path = "C:\\Users\\jedha\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mini.clue",
+    url = "https://github.com/echasnovski/mini.clue"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\jedha\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
