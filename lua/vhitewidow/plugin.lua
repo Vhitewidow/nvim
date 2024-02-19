@@ -17,4 +17,13 @@ return require('packer').startup(function(use)
     -- mini.clue
     use 'echasnovski/mini.clue'
 
+    --nvim-treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter', 
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+
 end)
