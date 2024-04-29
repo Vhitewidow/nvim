@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cyberdream.nvim"] = {
+    config = { "\27LJ\2\n”\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\5\20terminal_colors\2\25borderless_telescope\2\19hide_fillchars\2\20italic_comments\2\16transparent\2\nsetup\15cyberdream\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\jedha\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cyberdream.nvim",
+    url = "https://github.com/scottmckendry/cyberdream.nvim"
+  },
   ["mini.clue"] = {
     loaded = true,
     path = "C:\\Users\\jedha\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mini.clue",
@@ -98,15 +104,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\jedha\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\jedha\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: cyberdream.nvim
+time([[Config for cyberdream.nvim]], true)
+try_loadstring("\27LJ\2\n”\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\5\20terminal_colors\2\25borderless_telescope\2\19hide_fillchars\2\20italic_comments\2\16transparent\2\nsetup\15cyberdream\frequire\0", "config", "cyberdream.nvim")
+time([[Config for cyberdream.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

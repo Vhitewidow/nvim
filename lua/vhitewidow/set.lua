@@ -28,4 +28,4 @@ vim.o.termguicolors = true
 vim.o.clipboard = 'unnamed'
 
 -- color scheme
-require('vscode').load()
+require('cyberdream').load()
