@@ -28,4 +28,4 @@ vim.o.termguicolors = true
 vim.o.clipboard = 'unnamed'
 
 -- color scheme
-require('cyberdream').load()
+--require('cyberdream').load()

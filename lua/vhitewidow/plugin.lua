@@ -1,14 +1,14 @@
--- You are using packer.nvim as a plugin manager
--- After modifiying the needed packages run :PackerSync in nvim to update
+local lazypath = vim.fn.stdpath 'data' .. 'lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+    local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+    vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use('wbthomason/packer.nvim')
-
-    -- color scheme
-    -- use 'Mofiqul/vscode.nvim'
-    use {
-        'scottmckendry/cyberdream.nvim',
+require('lazy').setup({
+    'echasnovski/mini.clue', --mini clue
+    {
+        "scottmckendry/cyberdream.nvim",
         lazy = false,
         priority = 1000,
         config = function()
@@ -17,27 +17,24 @@ return require('packer').startup(function(use)
                 italic_comments = true,
                 hide_fillchars = true,
                 borderless_telescope = true,
-                terminal_colors = true
+                terminal_colors = true,
             })
+            vim.cmd('colorscheme cyberdream') -- set the colorscheme
         end,
-    }
-
-    -- Telescope
-    use {
-	    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-	    requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-    -- mini.clue
-    use 'echasnovski/mini.clue'
-
-    --nvim-treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter', 
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
+    },
+    {
+        -- Telescope
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        dependencies = 'nvim-lua/plenary.nvim'
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        config = function()
+            -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+            -- Prefer git instead of curl in order to improve connectivity in some environments
+            require('nvim-treesitter.install').prefer_git = true
         end,
-    }
-
-end)
+    },
+})
