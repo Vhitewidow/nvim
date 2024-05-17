@@ -37,4 +37,16 @@ require('lazy').setup({
             require('nvim-treesitter.install').prefer_git = true
         end,
     },
+    {
+        'lewis6991/gitsigns.nvim',
+        opts = {
+          signs = {
+            add = { text = '+' },
+            change = { text = '~' },
+            delete = { text = '_' },
+            topdelete = { text = '‾' },
+            changedelete = { text = '~' },
+          },
+        },
+    },
 })
